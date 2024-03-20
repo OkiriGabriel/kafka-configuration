@@ -1,3 +1,11 @@
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server [main] ERROR io.confluent.admin.utils.cli.KafkaReadyCommand - Error while running kafka-ready.
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server org.apache.kafka.common.KafkaException: Failed to create new KafkaAdminClient
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server  at org.apache.kafka.clients.admin.KafkaAdminClient.createInternal(KafkaAdminClient.java:407)
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server  at org.apache.kafka.clients.admin.AdminClient.create(AdminClient.java:65)
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server  at io.confluent.admin.utils.ClusterStatus.isKafkaReady(ClusterStatus.java:138)
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server  at io.confluent.admin.utils.cli.KafkaReadyCommand.main(KafkaReadyCommand.java:150)
+kafka-connect-cp-kafka-connect-ff84cc9c6-b9ckc cp-kafka-connect-server Caused by: java.lang.IllegalArgumentException: Could not find a 'KafkaClient' entry in the JAAS configuration. System property 'java.security.auth.login.config' is not set
+
 configurationOverrides:
   "plugin.path": "/usr/share/java,/usr/share/confluent-hub-components"
   "key.converter": "org.apache.kafka.connect.storage.StringConverter"
